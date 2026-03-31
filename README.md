@@ -1,33 +1,38 @@
 # 실험 진행 방법
-Baseline 생성
-1. train_cyclediffusion_enc.py
-2. train_cyclediffusion_dec.py
+📂 VQ-CycleDiffusion Project Structure
+1. Baseline & Data Setup
 
-test_data : ['002', '003', '004', '005', '006', '007', '009', '010', '011', '012',
-            '013', '014', '015', '016', '017', '018', '019', '020', '021', '023',
-            '024', '025', '026', '027', '028', '029', '030', '031', '032', '033']
+Baseline Scripts: train_cyclediffusion_enc.py, train_cyclediffusion_dec.py
 
-valid_data : ['034', '035', '036', '037', '038', '039', '040', 
-            '041', '042', '043', '044', '045', '046', '047', '048', '049', '050', 
-            '051', '052', '053', '054', '055', '056', '057', '058', '059', '060', 
-            '061', '062', '063' ]
-            
-pre-trained 모델(Decoder) :
-Dataset : 
+Dataset Split:
 
-이를 바탕으로 train 폴더 내에 있는 코드 진행
-직접 사용하는 코드는 크게 5가지 종류가 있음 (indv : 특정 화자의 데이터만, global : 전체 화자의 데이터)
-  1. init_codebook_stock (indv/global) - CycleDiffusion의 MelEncoder의 출력값(Encoded Output)을 바탕으로 Codebook 생성(K-Means)
-  2. train_codebook_only (global / indv) - Encoder - Codebook - Decoder 구조 연결한 이후, Codebook 만 학습
-  3. train_decoder (cycle / recon) - Encoder - Codebook - Decoder 구조 연결한 이후, cycle loss 혹은 recon loss를 이용해서 Decoder만 학습 진행
-  4. train_codebook_decoder_joint - Encoder - Codebook - Decoder 구조 연결한 이후, Codebook, Decoder를 동시에 학습
-  5. train_codebook_all_joint (global/indv) - encoder, codebook, decoder를 모두 학습
+Test Data (30 speakers): ['002' ~ '033'] (008, 022 제외)
 
-그 외에 사용하는 코드
-  - counting_map_script : Count Map을 사용하는 변환 방식의 경우, Speaker2Speaker, Speaker2Global 형태로 Count Map 생성 가능
+Valid Data (30 speakers): ['034' ~ '063']
 
-변환할 때는 convert에 들어있는 코드 사용. 정확하게는 convert/make_convert 혹은 conver/make_convert_vq_train 2가지 중에서 골라서 사용
-  - 내부에는 Original CycleDiffusion 변환 코드, Global Codebook만을 사용한 변환 코드, VQ-CycleDiffusion의 방법론 코드가 존재
-  - inference 코드는 convert/inference, convert/inference_vq_train 에서 확인 가능
+Pre-trained Model: Decoder (Dataset: [데이터셋 이름 추가 필요])
 
-MCD 측정은 calculate 폴더에서, cal_pymcd, cal_pymcd_single 등 다양하게 사용
+2. Training Scripts (train/ folder)
+학습 목적과 범위에 따라 크게 5가지 코드로 분류됩니다. (indv: 특정 화자, global: 전체 화자)
+
+init_codebook_stock (indv/global): CycleDiffusion MelEncoder의 출력값(Encoded Output)을 기반으로 K-Means 클러스터링을 통해 초기 Codebook 생성
+
+train_codebook_only (indv/global): Encoder - Codebook - Decoder 연결 후 Codebook 파라미터만 단독 학습
+
+train_decoder (cycle/recon): Encoder - Codebook - Decoder 연결 후 Cycle loss 또는 Recon loss를 사용하여 Decoder만 학습
+
+train_codebook_decoder_joint: Encoder - Codebook - Decoder 연결 후 Codebook과 Decoder를 동시에 학습
+
+train_codebook_all_joint (indv/global): Encoder, Codebook, Decoder 전체 네트워크를 End-to-End로 학습
+
+3. Utility & Inference Scripts
+
+Mapping: counting_map_script (Count Map을 활용하는 변환 방식의 경우, Speaker2Speaker 또는 Speaker2Global 형태의 Count Map 생성)
+
+Conversion: convert/make_convert 또는 convert/make_convert_vq_train 사용
+
+내부 지원 로직: Original CycleDiffusion 변환, Global Codebook 단독 활용 변환, VQ-CycleDiffusion 방법론
+
+Inference: convert/inference, convert/inference_vq_train
+
+Evaluation (MCD): calculate/ 폴더 내 cal_pymcd, cal_pymcd_single 등 사용
