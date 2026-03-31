@@ -1,0 +1,67 @@
+[
+    {
+        "converted_dir": "p236_to_p259",
+        "mean_mcd": 6.496768237123847,
+        "std_mcd": 1.0526096582077635
+    },
+    {
+        "converted_dir": "p236_to_p263",
+        "mean_mcd": 5.87875675127609,
+        "std_mcd": 1.25631183047053
+    },
+    {
+        "converted_dir": "p259_to_p263",
+        "mean_mcd": 6.11157729301027,
+        "std_mcd": 1.33863654032417
+    },
+    {
+        "converted_dir": "p236_to_p239",
+        "mean_mcd": 5.591667458517887,
+        "std_mcd": 1.2180096260953397
+    },
+    {
+        "converted_dir": "p239_to_p263",
+        "mean_mcd": 5.8773410900114795,
+        "std_mcd": 1.44226152646931
+    },
+    {
+        "converted_dir": "p263_to_p236",
+        "mean_mcd": 8.000732279537557,
+        "std_mcd": 2.080426723100036
+    },
+    {
+        "converted_dir": "p263_to_p259",
+        "mean_mcd": 6.6320624866673406,
+        "std_mcd": 1.2154920522259611
+    },
+    {
+        "converted_dir": "p263_to_p239",
+        "mean_mcd": 6.288446161140962,
+        "std_mcd": 1.6318964428223262
+    },
+    {
+        "converted_dir": "p239_to_p236",
+        "mean_mcd": 8.131343322972215,
+        "std_mcd": 1.9796452694442725
+    },
+    {
+        "converted_dir": "p239_to_p259",
+        "mean_mcd": 6.216180478783365,
+        "std_mcd": 1.0828341773204981
+    },
+    {
+        "converted_dir": "p259_to_p236",
+        "mean_mcd": 8.16208240240957,
+        "std_mcd": 2.4716971393076563
+    },
+    {
+        "converted_dir": "p259_to_p239",
+        "mean_mcd": 6.344385029599395,
+        "std_mcd": 1.8874834710656725
+    },
+    {
+        "converted_dir": "real_last_cycle_train_dec_4speakers_original_one_hot_50",
+        "mean_mcd": 6.644278582587498,
+        "std_mcd": 1.839763839129313
+    }
+]

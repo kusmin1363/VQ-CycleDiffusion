@@ -1,0 +1,43 @@
+# Python / 환경
+__pycache__/
+*.py[cod]
+.env
+
+# PyTorch & 모델 체크포인트
+*.pt
+*.pth
+checkpts/
+log/
+
+# 오디오 및 데이터셋
+*.wav
+*.flac
+*.mp3
+VCTK_2F2M/
+VCTK_2F2M_test/
+VCTK_2F2M_train/
+VCTK_2F2M_valid/
+samples/
+
+# 대용량 매핑 행렬 (필요시)
+mappings/
+mappings_include/
+mappings_train/
+mappings_v2/
+final_mappings/
+
+# IDE 설정
+.vscode/
+.idea/
+
+#기타
+00_kaldi/
+00_kaldi_2/
+00_kaldi_preparement/
+참고용/
+extracted_vectors/
+loss_graph/
+
+echo "nohup.out" >> .gitignore
+echo "*.out" >> .gitignore
+echo "*.log" >> .gitignore
