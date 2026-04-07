@@ -1,4 +1,4 @@
-# 실험 진행 방법
+# 실험 진행 방법(수정 및 추가 예정)
 📂 VQ-CycleDiffusion Project Structure
 1. Baseline & Data Setup
 
