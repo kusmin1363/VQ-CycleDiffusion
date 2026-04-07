@@ -10,7 +10,7 @@ Test Data (30 speakers): ['002' ~ '033'] (008, 022 제외)
 
 Valid Data (30 speakers): ['034' ~ '063']
 
-Pre-trained Model:
+Pre-trained Model and Datasets : https://drive.google.com/drive/folders/1CU7JYjo78cuFxWLWDufBdIZbDGVgS_iZ?usp=drive_link
 
 2. Training Scripts (train/ folder)
 학습 목적과 범위에 따라 크게 5가지 코드로 분류됩니다. (indv: 특정 화자, global: 전체 화자)
