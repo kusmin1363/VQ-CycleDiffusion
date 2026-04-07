@@ -10,7 +10,7 @@ Test Data (30 speakers): ['002' ~ '033'] (008, 022 제외)
 
 Valid Data (30 speakers): ['034' ~ '063']
 
-Pre-trained Model: Decoder (Dataset: [데이터셋 이름 추가 필요])
+Pre-trained Model:
 
 2. Training Scripts (train/ folder)
 학습 목적과 범위에 따라 크게 5가지 코드로 분류됩니다. (indv: 특정 화자, global: 전체 화자)
